@@ -44,4 +44,5 @@ public class HomeController {
         model.addAttribute("products", productService.getListProductByCatalogsId(id));
         return "welcome";
     }
+
 }

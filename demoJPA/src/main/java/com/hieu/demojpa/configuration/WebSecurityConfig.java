@@ -36,6 +36,7 @@ public class WebSecurityConfig{
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((requests)->requests
+                        .requestMatchers("/orders", "/purchase/**").authenticated()
                         .requestMatchers(PUBLIC_ENDPOINT).permitAll()
                         .anyRequest().permitAll())
                 .formLogin((form)->form

@@ -27,4 +27,11 @@ public class ProductService implements IProductService{
         List<Products> lstPrt = productsRepository.findByCatalog(catalogsRepository.findById(catalogId).get());
         return lstPrt;
     }
+
+    @Override
+    public Products getProductById(long id) {
+        Products prt = productsRepository.findById(id).get();
+        return prt;
+    }
+
 }

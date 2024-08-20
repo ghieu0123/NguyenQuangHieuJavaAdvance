@@ -10,4 +10,6 @@ public interface IUsersService extends UserDetailsService {
     public Users getUserByUserName(String username);
 
     public UserDetails loadUserByUsername(String username);
+
+    public Users getUserById(long id);
 }

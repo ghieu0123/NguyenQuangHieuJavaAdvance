@@ -11,7 +11,7 @@
     <form th:action="@{/logout}" method="post">
         <button type="submit">Sign out</button>
     </form>
-    <div><a href="shopping/view">Xem đơn hàng</a></div>
+    <div><a href="orders?">Xem đơn hàng</a></div>
 </div>
 
 <!-- Thêm thanh điều hướng dưới header -->
@@ -31,8 +31,7 @@
             <div class="product-name"><b><span th:text="*{name}"></span></b></div>
             <div class="product-price"><b><span th:text="*{price}"></span></b> đ</div>
         </div>
-        <form th:action="@{shopping/addtocart}" method="post">
-            <input type="hidden" th:value="${product.id}" name="productId" id="productId">
+        <form th:action="@{/purchase/{productId}(productId=${product.id})}" method="get">
             <button type="submit">Buy</button>
         </form>
     </div>

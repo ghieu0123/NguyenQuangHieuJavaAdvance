@@ -25,6 +25,11 @@ public class UsersService implements IUsersService {
     }
 
     @Override
+    public Users getUserById(long id) {
+        return userRepository.findById(id).get();
+    }
+
+    @Override
     public void createUser(Users newUser)
     {
         userRepository.save(newUser);
